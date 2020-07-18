@@ -16,7 +16,7 @@ const viewerOptions = {
         geocoder: false, // spyglass button
         baseLayerPicker: false, // bing maps button
         animation: false, // "clock"
-        timeline: false, // "timeline bar"
+        timeline: false, // "timeline bar" 
         //imageryProvider: false //This can be used to remove globe map
 }
 
@@ -31,7 +31,7 @@ export default class MapViewer extends Component {
     }
     // set interval timer to simulate moving object
     setInterval(() => (
-      this.setState({ lon: this.state.lon + 0.000005, alt: this.state.alt + 0.5 })
+      this.setState({ lon: this.state.lon + 0.000003, alt: this.state.alt + 0.2 })
     ), 300)
   }
 
@@ -44,7 +44,7 @@ export default class MapViewer extends Component {
 
       viewer.entities.add({
         name: 'Environment Box',
-        position: Cesium.Cartesian3.fromDegrees(37., 54),
+        position: Cesium.Cartesian3.fromDegrees(37., 54.),
         box: {
           material: Cesium.Color.WHITE.withAlpha(0.25),
           dimensions: new Cesium.Cartesian3(400.0, 200.0, 200.0),
@@ -61,13 +61,14 @@ export default class MapViewer extends Component {
   }
 
   render() {
-    return (
+    return (      
+      // The "ref" attribute below saves the reference to Viewer object as "this.viewver"
       <div>
-      <Viewer className="mapViewer" ref={e => { this.viewer = e ? e.cesiumElement : null; }}
-        {...viewerOptions}
+      <Viewer className="mapViewer" ref={e => { this.viewer = e ? e.cesiumElement : null; }}         
+        {...viewerOptions} //see whole bunch of features at the top
         full>
         <Entity selected tracked
-          position={Cartesian3.fromDegrees(this.state.lon-0.001, (35.675 + 35.681167) / 2, this.state.alt)}
+          position={Cartesian3.fromDegrees(this.state.lon-0.001, 37., this.state.alt)}
           name="Plane" >
           <ModelGraphics uri={model} />
         </Entity>
