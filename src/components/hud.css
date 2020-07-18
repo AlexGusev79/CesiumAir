@@ -1,0 +1,9 @@
+.hud {
+    text-align: left;
+    border: thick solid green;
+}
+.tools {
+    position: absolute;
+    text-align: left;
+    border: thick solid yellow;
+}

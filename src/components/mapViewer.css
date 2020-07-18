@@ -1,0 +1,10 @@
+.mapViewer {
+    margin-top: 100px;
+    padding-bottom: 60px;
+    position: absolute;
+    text-align: center;
+    text-align: center;
+    left: 0;
+    width: 100%;
+    overflow:hidden;
+}
