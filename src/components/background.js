@@ -1,6 +1,5 @@
 import React from "react";
 import MapViewer from "./mapViewer";
-import HUD from "./hud";
 import './background.css';
 const Background = () => {
   // Background houses MapViewer and HUD element.
@@ -8,7 +7,6 @@ const Background = () => {
   return (
     <div className="background">
       <MapViewer />
-      <HUD />
     </div>
   );
 }
