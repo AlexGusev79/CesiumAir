@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import Cesium, { Cartesian3 } from 'cesium';
 import { Viewer, Entity, ModelGraphics, CesiumWidget } from 'resium';
-import model from "../assets/Cesium_Air.glb"
+import model from "../assets/e58.glb"
 import "./mapViewer.css"
 
 Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NGI0N2M4Yi0yNTBmLTRkZWEtYWUzZS0yY2M0Y2EyNjNhMDYiLCJpZCI6ODQ2NCwic2NvcGVzIjpbImFzciIsImdjIl0sImlhdCI6MTU1MjAwMDIwMX0._VBYmeYGfzwtt3fBIDw9KGT-8L7fTdcfEUo_mhkRgTk';
@@ -47,7 +47,7 @@ export default class MapViewer extends Component {
         position: Cesium.Cartesian3.fromDegrees(37., 54.),
         box: {
           material: Cesium.Color.WHITE.withAlpha(0.25),
-          dimensions: new Cesium.Cartesian3(400.0, 200.0, 200.0),
+          dimensions: new Cesium.Cartesian3(100.0, 200.0, 200.0),
           fill: true,
           outline: true,
           outlineColor: Cesium.Color.RED
@@ -57,6 +57,7 @@ export default class MapViewer extends Component {
 
       // Position camera to show all entities
       viewer.zoomTo(viewer.entities);
+
     }
   }
 
