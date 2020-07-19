@@ -31,7 +31,7 @@ export default class MapViewer extends Component {
     }
     // set interval timer to simulate moving object
     setInterval(() => (
-      this.setState({ lat: this.state.lat + 0.000003, alt: this.state.alt + 0.2 })
+      this.setState({ lon: this.state.lon + 0.000003, lat: this.state.lat + 0.000003, alt: this.state.alt + 0.2 })
     ), 300)
   }
 
@@ -47,7 +47,7 @@ export default class MapViewer extends Component {
         position: Cesium.Cartesian3.fromDegrees(37., 54.),
         box: {
           material: Cesium.Color.WHITE.withAlpha(0.25),
-          dimensions: new Cesium.Cartesian3(100.0, 200.0, 200.0),
+          dimensions: new Cesium.Cartesian3(400.0, 200.0, 200.0),
           fill: true,
           outline: true,
           outlineColor: Cesium.Color.RED
@@ -68,8 +68,7 @@ export default class MapViewer extends Component {
       <Viewer className="mapViewer" ref={e => { this.viewer = e ? e.cesiumElement : null; }}         
         {...viewerOptions} //see whole bunch of features at the top
         full>
-        <Entity selected tracked
-          position={Cartesian3.fromDegrees(this.state.lat-0.001, 37., this.state.alt)}
+        <Entity selected tracked  position={Cartesian3.fromDegrees(this.state.lon, this.state.lat, this.state.alt)}
           name="Plane" >
           <ModelGraphics uri={model} />
         </Entity>
