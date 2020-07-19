@@ -31,7 +31,7 @@ export default class MapViewer extends Component {
     }
     // set interval timer to simulate moving object
     setInterval(() => (
-      this.setState({ lon: this.state.lon + 0.000003, alt: this.state.alt + 0.2 })
+      this.setState({ lat: this.state.lat + 0.000003, alt: this.state.alt + 0.2 })
     ), 300)
   }
 
@@ -69,7 +69,7 @@ export default class MapViewer extends Component {
         {...viewerOptions} //see whole bunch of features at the top
         full>
         <Entity selected tracked
-          position={Cartesian3.fromDegrees(this.state.lon-0.001, 37., this.state.alt)}
+          position={Cartesian3.fromDegrees(this.state.lat-0.001, 37., this.state.alt)}
           name="Plane" >
           <ModelGraphics uri={model} />
         </Entity>
