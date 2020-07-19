@@ -1,7 +1,7 @@
 {
-  "name": "npm-test",
-  "version": "0.1.0",
-  "private": true,
+  "name": "CesiumAir",
+  "version": "0.0.1",
+  "private": false,
   "dependencies": {
     "cesium": "^1.60.0",
     "react": "^16.9.0",
