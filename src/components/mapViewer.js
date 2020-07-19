@@ -31,7 +31,7 @@ export default class MapViewer extends Component {
     }
     // set interval timer to simulate moving object
     setInterval(() => (
-      this.setState({ lon: this.state.lon + 0.000003, lat: this.state.lat + 0.000003, alt: this.state.alt + 0.2 })
+      this.setState({ lon: this.state.lon + 0.000001, lat: this.state.lat + 0.0000001, alt: this.state.alt + 0.000001 })
     ), 300)
   }
 
@@ -63,10 +63,9 @@ export default class MapViewer extends Component {
 
   render() {
     return (      
-      // The "ref" attribute below saves the reference to Viewer object as "this.viewver"
       <div>
       <Viewer className="mapViewer" ref={e => { this.viewer = e ? e.cesiumElement : null; }}         
-        {...viewerOptions} //see whole bunch of features at the top
+        {...viewerOptions} 
         full>
         <Entity selected tracked  position={Cartesian3.fromDegrees(this.state.lon, this.state.lat, this.state.alt)}
           name="Plane" >
